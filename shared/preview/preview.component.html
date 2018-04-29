@@ -1,0 +1,4 @@
+<div *ngIf="model && model.body && model.body.length > 5">
+    <p>preview:</p>
+    <div class="preview-box" [innerHTML]="model.body | safeHtml"></div>
+</div>

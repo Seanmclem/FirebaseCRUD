@@ -1,0 +1,11 @@
+<h3>Projects List</h3>
+
+<p *ngIf="projects && projects.length == 0">No projects to show</p>
+<p *ngIf="errorMessage">{{errorMessage}}</p>
+<p *ngIf="successMessage">{{successMessage}}</p>
+
+<ul>
+  <li *ngFor="let project of projects">
+    {{ project.data() | json }}  <button (click)="edit(project.ref)">Edit</button> <button (click)="delete(project.ref)">Delete</button>
+  </li>
+</ul>

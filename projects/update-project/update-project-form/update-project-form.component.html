@@ -1,0 +1,52 @@
+
+
+<p>
+  update-project-form works!
+</p>
+<p *ngIf="errorMessage">{{errorMessage}}</p>
+<p *ngIf="successMessage">{{successMessage}}</p>
+
+  <mat-card class="login-card small-card">
+     <form 
+     #createForm="ngForm" (ngSubmit)="onSubmit(createForm.value)">
+      <div class="small-card-container">
+
+          <img src="{{model.mainImage}}"/>
+          <button>Remove Image</button>
+          <upload (urlChange)="uploadDone($event)" [data]="inputToChild"></upload>
+
+          <mat-form-field>
+            <input matInput placeholder="Description" id="description" required
+            [(ngModel)]="model.description" name="description"
+            #description="ngModel">
+          </mat-form-field>
+        
+          <mat-form-field>
+              <input matInput placeholder="Name" id="name" required
+              [(ngModel)]="model.name" name="name"
+              #name="ngModel">
+          </mat-form-field>
+ 
+          <editor required
+          [(ngModel)]="model.body" name="body"
+          #body="ngModel" [init]="{plugins: 'link code', 
+          extended_valid_elements:'script[language|type|src],style[type], link[rel|href]', 
+          valid_children : '+body[style|link], style[type], link[rel|href]'}"></editor>
+          
+      <p>{{errorMessage}}</p>
+     <button  mat-raised-button color="primary" type="submit">
+        Submit
+      </button>
+          <!-- <p>
+              Click here to sign-up if you don't have an account
+          </p>  -->
+        </div>
+      </form>
+    </mat-card> 
+
+
+    <preview [model]="model"></preview>
+
+    <h3>Render tst below</h3>
+    <div #dataContainer></div>
+    
