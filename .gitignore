@@ -1,1 +1,8 @@
 /node_modules/*
+/.angular-cli.json
+/.editorconfig
+/.firebaserc
+/karma.conf.js
+/protractor.conf.js
+/tsconfig.json
+/tslint.json
