@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Project } from '../../../models/project';
-import {FormControl, Validators, FormGroup, FormBuilder} from '@angular/forms';
+import {FormControl, Validators, FormGroup} from '@angular/forms';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
@@ -24,7 +24,6 @@ export class UpdateProjectFormComponent implements OnInit {
     private angularFireAuth: AngularFireAuth, 
     private router: Router, 
     private angularFireStore: AngularFirestore,
-    private formBuilder: FormBuilder,
     private firebaseAuthService: FirebaseAuthService,
     private firebaseService: FirebaseService) { 
   }

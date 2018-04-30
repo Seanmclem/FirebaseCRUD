@@ -26,9 +26,7 @@ import { UploadComponent } from './shared/upload/upload.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { PreviewComponent } from './shared/preview/preview.component';
 import { SafeHtmlPipe } from './shared/safe-html-pipe.pipe';
-
-
-
+import { CreateProjectFormComponent } from './projects/create-project/create-project-form/create-project-form.component';
 
 @NgModule({
   imports: [
@@ -48,7 +46,7 @@ import { SafeHtmlPipe } from './shared/safe-html-pipe.pipe';
     ListBlogPostComponent, 
     CreateBlogPostComponent, 
     UpdateBlogPostComponent, 
-    DeleteBlogPostComponent, UpdateProjectFormComponent, UploadComponent, PreviewComponent, SafeHtmlPipe
+    DeleteBlogPostComponent, UpdateProjectFormComponent, UploadComponent, PreviewComponent, SafeHtmlPipe, CreateProjectFormComponent
   ],
   providers: [
     FirebaseService,

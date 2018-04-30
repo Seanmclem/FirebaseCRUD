@@ -1,18 +1,19 @@
-
-
-<p>
-  update-project-form works!
-</p>
+<h3>
+  Create Project 
+</h3>
+        
 <p *ngIf="errorMessage">{{errorMessage}}</p>
 <p *ngIf="successMessage">{{successMessage}}</p>
 
+<!-- <p>{{model.mainImage | async}}</p> -->
+<div class="full-center">
+       
 
      <form 
      #createForm="ngForm" (ngSubmit)="onSubmit(createForm.value)">
       <div class="small-card-container">
 
-          <img src="{{model.mainImage}}"/>
-          <button>Remove Image</button>
+          <p>{{model.mainImage}}</p>
           <upload (urlChange)="uploadDone($event)" [data]="inputToChild"></upload>
 
 
@@ -24,15 +25,15 @@
               [(ngModel)]="model.name" name="name"
               #name="ngModel">
 
- 
+
+          
           <editor required
           [(ngModel)]="model.body" name="body"
           #body="ngModel" [init]="{plugins: 'link code', 
           extended_valid_elements:'script[language|type|src],style[type], link[rel|href]', 
-          valid_children : '+body[style|link], style[type], link[rel|href]'}"></editor>
-          
+          valid_children : '+body[style], style[type], link[rel|href]'}"></editor>
       <p>{{errorMessage}}</p>
-     <button   color="primary" type="submit">
+     <button color="primary" type="submit">
         Submit
       </button>
           <!-- <p>
@@ -42,9 +43,6 @@
       </form>
 
 
-
     <preview [model]="model"></preview>
-
-    <h3>Render tst below</h3>
-    <div #dataContainer></div>
     
+    </div>
